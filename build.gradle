@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        mavenLocal()
         mavenCentral()
     }
     dependencies {
@@ -14,7 +13,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'maven-publish'
 
-version = "2.4.0"
+version = "2.4.1"
 group = "org.cloudfoundry"
 description = "Spring Boot project for creating Cloud Foundry service brokers"
 
@@ -50,6 +49,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
     compile("org.hibernate:hibernate-validator:${hibernateValidatorVersion}")
 
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

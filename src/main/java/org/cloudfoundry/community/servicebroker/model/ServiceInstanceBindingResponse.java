@@ -1,8 +1,10 @@
 package org.cloudfoundry.community.servicebroker.model;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -30,7 +32,7 @@ public class ServiceInstanceBindingResponse {
 	@NotEmpty
 	@JsonSerialize
 	@JsonProperty("credentials")
-	public Map<String, Object> getCredentials() {
+	public Map<String, String> getCredentials() {
 		return binding.getCredentials();
 	}
 

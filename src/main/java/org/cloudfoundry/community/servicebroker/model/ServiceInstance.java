@@ -1,5 +1,9 @@
 package org.cloudfoundry.community.servicebroker.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -11,29 +15,36 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * @author sgreenberg@gopivotal.com
  *
  */
+@Entity
 @JsonAutoDetect(getterVisibility = JsonAutoDetect.Visibility.NONE)
 public class ServiceInstance {
 
+	@Id
 	@JsonSerialize
 	@JsonProperty("service_instance_id")
 	private String id;
 	
+	@Column
 	@JsonSerialize
 	@JsonProperty("service_id")
 	private String serviceDefinitionId;
 	
+	@Column
 	@JsonSerialize
 	@JsonProperty("plan_id")
 	private String planId;
 	
+	@Column
 	@JsonSerialize
 	@JsonProperty("organization_guid")
 	private String organizationGuid;
 	
+	@Column
 	@JsonSerialize
 	@JsonProperty("space_guid")
 	private String spaceGuid;
 	
+	@Column
 	@JsonSerialize
 	@JsonProperty("dashboard_url")
 	private String dashboardUrl;
